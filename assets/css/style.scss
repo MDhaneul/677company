@@ -1,0 +1,152 @@
+@charset "utf-8";
+@import "_var", "_mixin";
+@font-face{
+    font-family: NotoS;
+    font-weight: 400;
+    src: url(../fonts/NotoSansKR-Regular.eot);
+    src: local("★"),
+        url(../fonts/NotoSansKR-Regular.woff2) format("woff2"),
+        url(../fonts/NotoSansKR-Regular.woff) format("woff"),
+        url(../fonts/NotoSansKR-Regular.otf) format("opentype");
+}
+@font-face{
+    font-family: NotoS;
+    font-weight: 500;
+    src: url(../fonts/NotoSansKR-Medium.eot);
+    src: local("★"),
+        url(../fonts/NotoSansKR-Medium.woff2) format("woff2"),
+        url(../fonts/NotoSansKR-Medium.woff) format("woff"),
+        url(../fonts/NotoSansKR-Medium.otf) format("opentype");
+}
+@font-face{
+    font-family: NotoS;
+    font-weight: 700;
+    src: url(../fonts/NotoSansKR-Bold.eot);
+    src: local("★"),
+        url(../fonts/NotoSansKR-Bold.woff2) format("woff2"),
+        url(../fonts/NotoSansKR-Bold.woff) format("woff"),
+        url(../fonts/NotoSansKR-Bold.otf) format("opentype");
+}
+@font-face{
+    font-family: NotoS;
+    font-weight: 900;
+    src: url(../fonts/NotoSansKR-Black.eot);
+    src: local("★"),
+        url(../fonts/NotoSansKR-Black.woff2) format("woff2"),
+        url(../fonts/NotoSansKR-Black.woff) format("woff"),
+        url(../fonts/NotoSansKR-Black.otf) format("opentype");
+}
+
+body, h1, h2, h3, h4, ul, p{margin: 0; padding: 0;}
+h1, h2, h3, h4{font-size: 100%; font-weight: 400;}
+ul{list-style: none;}
+a:link, a:visited, a:hover, a:active{text-decoration: none; color: inherit;}
+img{vertical-align: top; border: none; max-width: 100%;}
+button{border: none; background: none; cursor: pointer; font-family: inherit; font-size: inherit; color: inherit;}
+address{font-style: normal;}
+header, nav, section, article, address, footer{display: block;}
+
+.clearfix:after{content: "";display: block;clear: both;}
+.sr-only{position: absolute; top: 0; left: -9999px;}
+
+body{
+    font-family: NotoS; font-size: 15px; font-weight: 400; line-height: 1.3; color: $white; background: $black; word-break: keep-all;
+    #wrap{width: 80%; margin: 0 10%; min-width: 1080px;}
+}
+a:focus, button:focus{outline: 3px solid $yellow; z-index: 1500;}
+
+/* common */
+#skip a{position: fixed; top: 30px; left: -9999px; z-index: 3000;}
+#skip a:focus{left: 0; width: 350px; height: 100px; line-height: 100px; padding-right: 15px; text-align: right; background: $yellow; color: $black; font-size: 30px; font-weight: 900;}
+
+/* header */
+#HEADER{
+    position: fixed; top: 0; left: 0; width: 100%; height: 107px; z-index: 1000;
+    #HAMBURGER{
+        position: fixed; top: 34px; right: 10%; width: 40px; height: 35px; z-index: 1020;
+        .line{
+            @include transition(all 0.7s);
+            position: absolute;
+            width: 100%; height: 5px; background: $white; left: 0;
+            &.top{top: 0;}
+            &.mid{top: 15px;}
+            &.btm{top: 30px;}
+        }
+        &.activate{
+            .line{background: $black;}
+            .top{@include transform(rotate(-45deg));
+                top: 15px;}
+            .mid{opacity: 0;}
+            .btm{@include transform(rotate(45deg));
+                top: 15px;}
+        }
+    }
+    .gnb-bg{visibility: hidden; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: $black; opacity: 0.5;}
+    #GNB{
+        visibility: hidden; position: fixed; top: 0; right: 0; width: 100%; height: 100%; overflow-y: auto; z-index: 1010;
+        .gnb-menu{
+            position: absolute; top: 0; right: 0; height: 100%; width: 30%; background: $white;
+            li{
+                color: $black; position: absolute; top: 30%; left: 30px; font-size: 30px; font-weight: 900;
+                &:nth-child(2){margin-top: 120px;}
+                &:nth-child(3){margin-top: 240px;}
+                a{
+                    @include transition(all 0.5s);
+                    display: block; padding-left: 15px; width: 160px; height: 50px; line-height: 50px;
+                    &:hover, &:focus{letter-spacing: 15px;}
+                }
+            }
+        }
+    }
+    #HEADLOGO{
+        position: absolute; top: 15px; left: 10%; width: 150px; height: auto;
+        a{
+            display: block;
+            img{display: block;}
+        }
+    }
+}
+
+/* footer */
+#FOOTER{
+    margin: 40px 0; font-size: 13px; text-align: right; line-height: 2;
+    p{font-size: 17px; font-weight: 700;}
+}
+
+/* intro */
+.index-bg-icon{opacity: 0.05; z-index: -1; position: fixed; top: 0; left: 0; margin-left: 25vw; width: 50vw; min-width: 100vh; height: auto;}
+.index-box{
+    margin-top: 50px;
+    p{
+        font-size: 9.5em; font-weight: 900;
+        &:first-child{font-size: 12em;}
+    }
+    .index-square{
+        display: inline-block; margin-top: 150px; width: 900px; height: 30px; background: $white;
+        &:hover{background-color: $yellow;}
+    }
+    .index-circle{
+        @include radius(50%);
+        display: inline-block; margin-top: 150px; margin-left: 50px; width: 50px; height: 50px; background: $white;
+        &:hover{background-color: $yellow;}
+    }
+    a{
+        position: fixed; bottom: 80px; right: 80px; width: 200px; height: 80px; line-height: 80px; font-size: 50px; font-weight: 700; text-align: center;
+        &:hover, &:focus{color: $yellow;}
+    }
+}
+
+/* main */
+.main-content1{
+    margin-top: 107px; position: relative; text-align: center; 
+    video{width: 100%; height: auto; z-index: -1; opacity: 0.3;}
+    .main-intro{
+        position: absolute; top: 50%; left: 0; margin-top: -200px; width: 100%; height: 350px;
+        h3{width: 100%; height: 110px; line-height: 110px; font-size: 2.5vw; font-weight: 900;}
+        p{width: 100%; height: 110px; line-height: 110px; font-size: 2.5vw; font-weight: 700;}
+        .main-value{width: 100%; height: 130px; line-height: 130px; font-size: 3.3vw; font-weight: 900; color: $yellow;}
+    }
+}
+.main-content2{
+
+}
