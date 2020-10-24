@@ -169,21 +169,21 @@ a:focus, button:focus {
     #HEADER #GNB .gnb-menu {
       position: absolute;
       top: 0;
+      bottom: 0;
       right: 0;
-      height: 100%;
       width: 30%;
       background: #fff; }
       #HEADER #GNB .gnb-menu li {
         color: #191919;
         position: absolute;
-        top: 30%;
+        top: 20%;
         left: 30px;
         font-size: 30px;
         font-weight: 900; }
         #HEADER #GNB .gnb-menu li:nth-child(2) {
-          margin-top: 120px; }
+          margin-top: 160px; }
         #HEADER #GNB .gnb-menu li:nth-child(3) {
-          margin-top: 240px; }
+          margin-top: 320px; }
         #HEADER #GNB .gnb-menu li a {
           -webkit-transition: all 0.5s;
           -moz-transition: all 0.5s;
@@ -191,8 +191,8 @@ a:focus, button:focus {
           transition: all 0.5s;
           display: block;
           padding-left: 15px;
-          width: 160px;
-          height: 50px;
+          width: 250px;
+          height: 100px;
           line-height: 50px; }
           #HEADER #GNB .gnb-menu li a:hover, #HEADER #GNB .gnb-menu li a:focus {
             letter-spacing: 15px; }
@@ -305,5 +305,37 @@ a:focus, button:focus {
       font-size: 3.3vw;
       font-weight: 900;
       color: #ffe600; }
+
+.main-content2 {
+  margin: 200px 0 150px;
+  text-align: center; }
+  .main-content2 .main-about, .main-content2 .main-works, .main-content2 .main-media {
+    width: 20%;
+    margin: 0 5%;
+    display: inline-block; }
+    .main-content2 .main-about h3, .main-content2 .main-works h3, .main-content2 .main-media h3 {
+      font-weight: 700;
+      font-size: 25px;
+      margin-bottom: 15px; }
+  .main-content2 .main-icon {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 35px; }
+    .main-content2 .main-icon.about {
+      background: url(../images/main/about-bk.svg) center no-repeat; }
+      .main-content2 .main-icon.about:hover, .main-content2 .main-icon.about:focus {
+        background-image: url(../images/main/about-c.svg); }
+    .main-content2 .main-icon.works {
+      background: url(../images/main/work-bk.svg) center no-repeat; }
+      .main-content2 .main-icon.works:hover, .main-content2 .main-icon.works:focus {
+        background-image: url(../images/main/work-c.svg); }
+    .main-content2 .main-icon.media {
+      background: url(../images/main/media-bk.svg) center no-repeat; }
+      .main-content2 .main-icon.media:hover, .main-content2 .main-icon.media:focus {
+        background-image: url(../images/main/media-c.svg); }
 
 /*# sourceMappingURL=style.css.map */
